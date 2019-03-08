@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="angular.js"></script>
+</head>
+
+<body>
+{{'hello world'}}
+<div ng-init="num=100">
+  {{num}}
+</div>
+<div ng-init="list=['1','2','3']">
+  <li ng-repeat="x in list">
+    {{x}}
+  </li>
+</div>
+<input type="text" ng-model="mesage">
+  {{mesage}}
+</input>
+</body>
+
+</html>
