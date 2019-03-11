@@ -4,21 +4,31 @@
   <meta charset="utf-8">
   <script type="text/javascript" src="angular.js"></script>
   <script type="text/javascript" src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
-
-<body>
-{{'hello world'}}
-<div ng-init="num=100">
-  {{num}}
-</div>
-<div ng-init="list=['1','2','3']">
-  <li ng-repeat="x in list">
-    {{x}}
-  </li>
-</div>
-<input ng-model="message">
-  <p ng-bind="message"></p>
+<body ng-controller="myController">
+  <input type="button" value="クリック +1" ng-click="count=count+1">
+  <input type="button" value="マウスオーバー *2" ng-focus="double($event)">
+  {{count}}
+<input ng-model="myName">
+  <p>my name is {{ myName }}</p>
+  <p ng-bind-template="{{ message }}"></p>
+  <p ng-non-bindable>my name is {{ myName }}</p>
 </input>
+<div mg-model="isShow" ng-init="isShow=true">
+  <img ng-show="isShow" ng-click="move='after'" ng-class="move" src=./images/warota.png >
+</div>
+<input type="radio" ng-model="greeting" value="morning">朝
+<input type="radio" ng-model="greeting" value="daytime">昼
+<input type="radio" ng-model="greeting" value="night">夜
+<div ng-switch="greeting">
+  <div ng-switch-when="morning">おはよう</div>
+  <div ng-switch-when="daytime">こんにちは</div>
+  <div ng-switch-when="night">おやすみ</div>
+  <div ng-switch-default>選択してください</div>
+</div>
+<div ng-init="alp=['a','b','c']">
+  <li ng-repeat="a in alp">{{a}}
+</div>
 </body>
-
 </html>
